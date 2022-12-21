@@ -18,7 +18,7 @@ public class SimpleWithDB {
         ArrayList<HashMap> bundle_list = new ArrayList<>();
         try {
             ResultSet resultSet = statement.executeQuery(query);
-           
+            
             while (resultSet.next()) {
                 // 설문 문항에 맞는 설문 답항 출력
                 System.out.print(resultSet.getInt("ORDERS") + ". ");

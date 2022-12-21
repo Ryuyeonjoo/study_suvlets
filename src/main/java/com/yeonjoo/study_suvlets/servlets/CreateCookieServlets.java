@@ -10,20 +10,20 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-@WebServlet(urlPatterns = "/cookies/creatServlets")
-public class CreateCookiServlets extends HttpServlet{
+@WebServlet(urlPatterns="/cookies/createServlets")
+public class CreateCookieServlets extends HttpServlet{
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
 
         // Cookie
-        Cookie cookie_first = new Cookie("firstName", "Yeonjoo");
-        Cookie cookie_second = new Cookie("secondName", "Ryu");
-        response.addCookie(cookie_first);
+        Cookie cookie_first = new Cookie("firstName", "Yoju"); //선언
+        Cookie cookie_second = new Cookie("secondName", "Lab");
+        response.addCookie(cookie_first); //내보내기
         response.addCookie(cookie_second);
         // display
         PrintWriter printWriter = response.getWriter();
-        printWriter.println("<div>CreateCookiServlets</div>");
+        printWriter.println("<div>CreateCookieServlets</div>");
         printWriter.close();
-        }        
     }
+}

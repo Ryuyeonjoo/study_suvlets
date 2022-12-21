@@ -13,8 +13,8 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-@WebServlet(urlPatterns = "/simpleWithDBServlets")
-public class SimpleWithDBServlets extends HttpServlet{
+@WebServlet(urlPatterns="/simple/WithDBServlets")
+public class SimpleWithDBServlets extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
@@ -34,8 +34,7 @@ public class SimpleWithDBServlets extends HttpServlet{
             String questions_uid = (String) question.get("QUESTIONS_UID");
             printWriter.println("<div>"+orders+". "+questions+"<input type='hidden' value='"+questions_uid+"' /></div>");
         }
+      
         printWriter.close();
-
     }
-    
 }

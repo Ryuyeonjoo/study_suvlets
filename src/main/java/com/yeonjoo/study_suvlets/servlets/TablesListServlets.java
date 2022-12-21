@@ -37,6 +37,7 @@ public class TablesListServlets extends HttpServlet{
         printWriter.println("crossorigin='anonymous'>");
         printWriter.println("<link rel='stylesheet' href='./css/commons.css' />");
         printWriter.println("</head>");
+        
         printWriter.println("<body>");
         printWriter.println("<div class='container'>");
         printWriter.println("<div class='fs-3'>Tables Normal</div>");
