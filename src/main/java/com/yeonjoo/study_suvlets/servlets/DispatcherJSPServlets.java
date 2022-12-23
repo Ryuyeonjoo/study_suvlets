@@ -16,7 +16,7 @@ public class DispatcherJSPServlets extends HttpServlet {
    String hiddenParam = request.getParameter("hiddenParam");
 
 // /dispatcherJSPServlets?firstName=Sanghun&secondName=Oh
-        request.setAttribute("firstName", "yojulab");
+        request.setAttribute("firstName", "yeonjoo");
         RequestDispatcher requestDispatcher =  request.getRequestDispatcher("/search_form.jsp");       
          requestDispatcher.forward(request, response); 
     
