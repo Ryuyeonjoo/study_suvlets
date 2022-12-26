@@ -10,17 +10,14 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
+
 @WebServlet(urlPatterns = "/dispatcherJSPServlets")
 public class DispatcherJSPServlets extends HttpServlet {
- protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException{
-   String hiddenParam = request.getParameter("hiddenParam");
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException{
+        String hiddenParam = request.getParameter("hiddenParam");
 
-// /dispatcherJSPServlets?firstName=Sanghun&secondName=Oh
         request.setAttribute("firstName", "yeonjoo");
-        RequestDispatcher requestDispatcher =  request.getRequestDispatcher("/search_form.jsp");       
-         requestDispatcher.forward(request, response); 
-    
-         
+        RequestDispatcher requestDispatcher = request.getRequestDispatcher("/search_form.jsp");
+        requestDispatcher.forward(request, response);
     }
-    }
-        
+}

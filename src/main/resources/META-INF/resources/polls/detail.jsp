@@ -1,5 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ page import="java.util.HashMap" %>
+<%@ page import="java.util.HashMap, java.util.ArrayList" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -31,11 +31,12 @@
             answer_list = (ArrayList<HashMap>) request.getAttribute("answer_list");
         %>
         <% 
-        for(int i = 0; i < answer_list.size(); i++){ 
-            HashMap<String, Object> answer = answer_list.get(i); 
+            for(int i=0;i < answer_list.size();i++){ 
+                
+                HashMap<String, Object>  answer = answer_list.get(i);
         %>
-        <div> (<%= answer.get("ORDERS") %>) <%= answer.get("EXAMPLE") %> </div>
-        <% } %>
+        <div> (<%= answer.get("ORDERS") %>) <%= answer.get("EXAMPLE") %></div>
+        <%  } %>
     </div>
 </body>
 

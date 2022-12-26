@@ -5,7 +5,6 @@ public class MemberBean {
     String secondName;
     String handleName;
 
-    // getter
     public String getFirstName() {
         return this.firstName;
     }
@@ -15,17 +14,15 @@ public class MemberBean {
     public String getHandleName() {
         return this.handleName;
     }
-    
-    // setter
+
     public void setFirstName(String firstName) {
         this.firstName = firstName;
     }
-
     public void setSecondName(String secondName) {
         this.secondName = secondName;
     }
-
     public void setHandleName(String handleName) {
         this.handleName = handleName;
     }
+
 }

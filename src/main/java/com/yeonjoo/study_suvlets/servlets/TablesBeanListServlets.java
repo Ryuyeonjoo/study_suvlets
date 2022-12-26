@@ -21,8 +21,8 @@ public class TablesBeanListServlets extends HttpServlet{
         throws ServletException, IOException {
             
         DatasInfor datasInfor = new DatasInfor();
-        // MemberBean memberBean = datasInfor.getDataWithMemberBean();
-        HashMap<String, Object> bundlesData =  datasInfor.getBundlesData();
+        // MemberBean memberBean = datasInfor.getDataWithMamberBean();
+        HashMap<String, Object> bundlesData = datasInfor.getBundlesData();
 
         // Display areas
         PrintWriter printWriter = response.getWriter();
@@ -40,11 +40,11 @@ public class TablesBeanListServlets extends HttpServlet{
         printWriter.println("    <div class='container'>");
         printWriter.println("        <div class='fs-3'>Tables with Bean</div>");
 
-        MemberBean memberBean2 = (MemberBean) bundlesData.get("dataWithMemberBean");
-        printWriter.println("<div class='fs-4'>"+memberBean2.getFirstName() + " " + memberBean2.getSecondName() 
-                            + " " + memberBean2.getHandleName()+"</div>");
-        // printWriter.println("<div class='fs-4'>"+memberBean.getFirstName() + " " + memberBean.getSecondName() 
-        //                     + " " + memberBean.getHandleName()+"</div>");
+        MemberBean memberBean2 = (MemberBean) bundlesData.get("dataWithMamberBean");
+        printWriter.println(memberBean2.getFirstName() + " " + memberBean2.getSecondName() 
+        + " " + memberBean2.getHandleName());
+        // printWriter.println(memberBean.getFirstName() + " " + memberBean.getSecondName() 
+        // + " " + memberBean.getHandleName());
 
         printWriter.println("        <table class='table'>");
         printWriter.println("            <thead>");
@@ -56,18 +56,18 @@ public class TablesBeanListServlets extends HttpServlet{
         printWriter.println("                </tr>");
         printWriter.println("            </thead>");
         printWriter.println("            <tbody>");
-
-        ArrayList<MemberBean> dataListWithMemberBean = (ArrayList<MemberBean>)bundlesData.get("dataListWithMemberBean");
+        
+        ArrayList<MemberBean> dataListWithMemberBean = (ArrayList<MemberBean>) bundlesData.get("dataListWithMemberBean");
 
         for(int i=0; i<dataListWithMemberBean.size(); i++){
             MemberBean memberBean = dataListWithMemberBean.get(i);
-            printWriter.println("<tr>");
-            printWriter.println("<th scope=>"+(i+1)+"</th>");
+            printWriter.println("                <tr>");
+            printWriter.println("                    <th scope=>"+(i+1)+"</th>");
             String handle = memberBean.getHandleName();
-            printWriter.println("<td>"+memberBean.getFirstName()+"</td>");
-            printWriter.println("<td>"+memberBean.getSecondName()+"</td>");
-            printWriter.println("<td>"+handle+"</td>");
-            printWriter.println("</tr>");
+            printWriter.println("                    <td>"+memberBean.getFirstName()+"</td>");
+            printWriter.println("                    <td>"+memberBean.getSecondName()+"</td>");
+            printWriter.println("                    <td>"+handle+"</td>");
+            printWriter.println("                </tr>");
         }
         printWriter.println("            </tbody>");
         printWriter.println("        </table>");

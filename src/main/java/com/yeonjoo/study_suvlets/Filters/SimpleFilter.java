@@ -9,11 +9,12 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.ServletRequest;
 import jakarta.servlet.ServletResponse;
 import jakarta.servlet.annotation.WebFilter;
+import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 @WebFilter
-public class SimpleFilter implements Filter {
+public class SimpleFilter implements Filter{
     @Override
     public void destroy() {
     }
@@ -23,18 +24,18 @@ public class SimpleFilter implements Filter {
             throws IOException, ServletException {
         System.out.println(request.getRemoteHost());
         System.out.println(request.getRemoteAddr());
-        HttpServletRequest httpServletRequest = (HttpServletRequest)request;
+        HttpServletRequest httpServletRequest = (HttpServletRequest) request;
         HttpServletResponse httpServletResponse = (HttpServletResponse) response;
 
         String uri = httpServletRequest.getRequestURI();
 
-        if(uri.endsWith("Servlet")){
+        if(uri.endsWith("Servlets")){
             httpServletResponse.sendRedirect("/index.html");
         } else {
             chain.doFilter(request, response);
         }
-    }
 
+    }
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
     }

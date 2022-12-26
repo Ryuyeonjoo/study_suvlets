@@ -34,7 +34,6 @@ public class SimpleWithDBServlets extends HttpServlet {
             String questions_uid = (String) question.get("QUESTIONS_UID");
             printWriter.println("<div>"+orders+". "+questions+"<input type='hidden' value='"+questions_uid+"' /></div>");
         }
-      
         printWriter.close();
     }
 }

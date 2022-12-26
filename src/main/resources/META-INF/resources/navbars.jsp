@@ -1,10 +1,9 @@
-
 <%@ page import="java.util.HashMap, java.util.ArrayList" %>
 
     <% 
-        HashMap<String, String> searchForm = (HashMap<String, String>)request.getAttribute("searchForm"); 
+        HashMap<String, String> searchForm01 = (HashMap<String, String>)request.getAttribute("searchForm"); 
     %>
-    
+    <%= searchForm01.get("search_key") %>
 <%! String url = "location.href= '/pollListServlet' "; %>
     <button class="btn btn-primary" onclick="<%= url%>">Next</button>
 
@@ -16,4 +15,3 @@
         </div>
     </nav>
     <hr>
-    
