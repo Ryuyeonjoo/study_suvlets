@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public class PollWithDB {
-    public ArrayList<HashMap> getAnswer(String questionsUid) 
+    public ArrayList<HashMap> getAnswerList(String questionsUid) throws SQLException {
     
             Commons commons = new Commons();
             Statement statement = commons.getStatement();
@@ -29,7 +29,7 @@ public class PollWithDB {
                 answer_list.add(answer);
             } 
             return answer_list;
-     
+        }
     public HashMap<String, Object> getQuestion(String questionsUid) throws SQLException{
 
         Commons commons = new Commons();
@@ -49,8 +49,8 @@ public class PollWithDB {
 
         return result;
     }
-}
 
+}
 
 
 // SELECT * FROM QUESTIONS_LIST
